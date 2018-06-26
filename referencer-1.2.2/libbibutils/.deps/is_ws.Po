@@ -1,0 +1,5 @@
+is_ws.o: is_ws.c /usr/include/stdc-predef.h is_ws.h
+
+/usr/include/stdc-predef.h:
+
+is_ws.h:

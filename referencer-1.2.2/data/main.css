@@ -1,0 +1,160 @@
+
+
+
+div#main {
+	background-color:#EEEEFF;
+	margin: 0 auto;
+}
+
+div#logo {
+	float:left;
+	margin-right:15px;
+}
+
+body {
+	background-color:white;
+	color:black;
+	width: 780px;
+	/*font: small Lucida Grande, Trebuchet MS, sans-serif;*/
+
+	padding:0px;
+		/*
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	*/
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+
+a.title {
+	margin:				0;
+	padding:			3px;
+	display:			block;
+	text-decoration:		none;
+	color:				black;
+	background-color:		inherit;
+	border-width: 0px;
+}
+
+
+h1.maintitle{
+	font-weight: bold;
+	margin-bottom:0px;
+}
+
+
+div#titlebar
+{
+	background-color:#EEEEFF;
+	border-width: 0px;
+	padding:10px;
+}
+
+
+div#footer
+{
+	border-width: 0px;
+	padding: 10px;
+	padding-top: 100px;
+	width:				800px;
+	float:left;
+}
+
+div#footer p
+{
+	text-align: center;
+	font-size: 50%;
+}
+
+
+div.menubox {
+	float:				right;
+	width:				150px;
+	background-color:		#EEEEFF;
+	margin-top:15px;
+	/*
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	border-left:				1px solid #54482e;
+	border-right:				1px solid #54482e;
+	*/
+}
+
+
+div.menubox h2
+{
+	margin-top:10px;
+	padding-left: 3px;
+	padding-top:1px;
+	padding-bottom:1px;
+	padding-right:2px;
+	font-size: 130%;
+}
+
+div.menubox div {
+
+	margin-bottom: 5px;
+}
+
+div.menubox p {
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+
+
+div.textbox {
+	float:				left;
+	width:				610px;
+	background-color:#EEEEFF;
+
+	padding-top:   10px;
+	padding-left: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-top: 15px;
+	margin:right: 0px;
+}
+
+div.textbox p {
+	padding-right: 10px;
+}
+
+div.textbox ul {
+	padding-right: 10px;
+}
+
+
+div.textbox div {
+/*	margin-top:			15px;*/
+}
+
+div#screenshots p {
+	margin-bottom:35px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Trebuchet MS, Lucida Grande, sans-serif;
+}
+
+
+h3.subtitle{
+	padding-left: 20px;
+	margin-top:5px;
+	font-style: italic;
+
+}
+
+h2
+{
+	margin-top:0px;
+	padding-left: 3px;
+	padding-top:1px;
+	padding-bottom:1px;
+	background-color: #CCCCEE;
+}

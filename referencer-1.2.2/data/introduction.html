@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+<title>Introduction to Referencer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+<div id="main">
+
+<div id="titlebar">
+
+<h1>Introduction to Referencer</h1>
+<h3>Author: John Spray <jcspray at icculus.org></h3>
+
+</div>
+
+<div class="textbox">
+
+<h2>Overview</h2>
+<p>Referencer is a tool to help you manage your collection of documents, and to use them to generate a bibliography.  It is designed with the scientist/researcher in mind, and "document" may be taken to mean "paper" in general, although Referencer can deal with any kind of document that BibTeX can.</p>
+<p>At it's most basic, Referencer may be used for editing your documents and bibliography data (<i>library</i>).  However, it also includes useful time-saving features.  Chief amongst these is the automatic acquisition of bibliographic information (<i>metadata</i>) for some kinds of document.  When you add a PDF file to your Referencer library, it will automatically be searched for key identifiers such as a DOI code or arXiv identifier.  If either of these is found, Referencer uses your internet connection to retrieve the metadata for the document.  If you've got a collection of already-downloaded PDFs of papers, this can <b>save you a lot of typing!</b></p>
+<p>Referencer also uses its knowledge of papers to provide handy functions such as opening the web page associated with the article, or opening the document itself.  Additionally, you can attach <i>tags</i> to documents to catgorise them, and then browse documents more easily by filtering them by tag.</p>
+<p>Referencer is intended to be extremely user-friendly, but to help you get up and running as smoothly as possible, the following sections explain how to use Referencer in more detail.</p>
+
+<h2>How do I...</h2>
+<h3>use Referencer with BibTeX?</h3>
+<p>Referencer maintains its own library of your documents, rather than loading and editing a BibTeX file.  As such, when you're ready to use your library in your LaTeX document, you can have Referencer generate a BibTeX file (<i>Library->Export to BibTeX</i>).  By default this will include all documents in your library: if you would rather only export some documents then you can use the <i>Selection:</i> field in the export dialog to restrict the export to certain documents.  Rather than repeatedly exporting when you make changes, you can tell Referencer to write the BibTeX file every time you change your library (<i>Library->Manage BibTeX File</i>).</p>
+</p>
+<p>Referencer will automatically handle conversion of special characters (e.g. ß) to their LaTeX equivalents (e.g. \ss).  Depending on the BibTeX style you are using in your work, capitalisation of text in your latex output may differ from that in your Referencer library.  This is to allow publishers to impose their own capitalisation schemes.  If you want text to be capitalised in your work exactly as it is in your library, then you can use the <i>Protect capitalization</i> option in the BibTeX export dialog.</p>
+
+<p>If you already have a BibTeX file, you can import it into Referencer (<i>Library->Import...</i>).  Importing and then exporting a bibtex file is not guaranteed (or intended) to produce exactly the same file as went in: <b>Referencer is not a BibTeX editor</b>.  Information such as document filenames and tags is not included in BibTeX files.  You should always use your Referencer library file as the authoritative copy.</p>
+<h3>add documents?</h3>
+<ul>
+	<li><p><b>By file/folder:</b>  <i>Documents->Add File...</i><br>
+	If you have some document files you'd like Referencer to know about, you can add one or more files, or a whole folder (<i>Documents->Add Folder..</i>), and Referencer will create entries for each file.  PDF files will be read, and Referencer will do its best to fill out the metadata for you.</p>
+	<p><i>Note: when adding a folder of files, files named ".svn", "CVS", files with the extension ".bib" or ".reflib" and files with names starting "." are automatically skipped.  These files can still be added individually.</i></p>
+	</li>
+	<li><p><b>By DOI code:</b>  <i>Documents->Add Document with DOI...</i><br>
+	If you have the DOI code for a paper, you can save yourself the effort of inputting its metadata by simply giving Referencer the DOI and letting it look up the metadata for you.</p>
+	</li>
+	<li><p><b>By hand:</b>  <i>Documents->Add Empty Reference...</i><br>
+	As a last resort, Referencer provides a simple interface for manually creating a document and inputting metadata.  A document with no information is created, and the properties window is opened for you to enter a name for the document and some metadata.
+	</p></li>
+	<li><p><b>From a BibTeX/EndNote/Refer file:</b>  <i>Library->Import...</i><br>
+	Your existing bibliography files, or snippets from websites can be imported.  Items from these files will be loaded and added to the currently open library.
+	</p></li>
+	<li><p><b>By copy/paste:</b>  <i>Edit->Paste BibTeX</i><br>
+	To conveniently import references from the web, or particular references from an existing BibTeX file, you can simply copy and past BibTeX markup into referencer, where these references will be added as if you had imported them from a file.
+	</p></li>
+</ul>
+<h3>use different document types/fields?</h3>
+<p>Referencer's user interface is optimised for dealing with scientific papers.  As such, the document type is "Article" by default and fields such as Title, Authors, Journal and Volume are shown.  Other types of document may be selected in the properties window (<i>Documents->Properties...</i>).  If you don't see the BibTeX type you want, simply type it in and it will be passed through verbatim when exporting to your BibTeX file.  Some document types may require additional metadata fields, for example "Book" documents should have an "Editor" field.  You can add this by expanding the <i>Extra Fields</i> section of the properties window, and clicking the <i>New</i> icon.  To enter some data into your new field, select it and click the <i>Edit</i> icon.
+</p>
+
+<h2>Tagging and Searching</h2>
+<p>Tagging allows you to categorise your documents.  Unlike a traditional hierarchical directory type organisation, a tag-based system allows a document to belong to multiple overlapping categories.  For instance, you might have tags called "Physics" and "Biology", and another called "Exciting papers".  If these were directories, you would have to make arbitrary choices about which to put a paper into.  As it is, you can just assign both "Physics" and "Exciting papers" to a document, and when you're not excited any more just remove the "Exciting papers" tag.</p>
+<p>Once you've created a tag (<i>Tags->Create Tag...</i>), a checkbox for the tag will appear in the bottom half of the Tag Pane (shown or hidden using <i>View->Show Tag Pane</i>).  Once you've selected one or more documents, you can set or unset this tag for the group by clicking the checkbox.</p>
+
+<p>Once you've tagged some documents, you may want to filter your view by tag.  You can do this by clicking on a tag in the list in the top half of the Tag Pane.  To include more tags in the view, hold Ctrl while clicking to select more than one tag.</p>
+
+<p>To complement the tagging system, a search box is provided above the document view.  Entering text into the search box will cause only those documents featuring the search text to be shown.  The search only considers the Title, Authors and Key fields of the documents.</p>
+
+<h2>Plugins</h2>
+<p>Additional functionality can be added to Referencer using the versatile
+<a href="http://www.python.org">Python</a> language.  As of version 1.1, two 
+kinds of plugin are supported: <i>Metadata fetcher</i> plugins, and 
+<i>Document action</i> plugins.  The former might be a script that 
+looks up metadata for a DOI code in an internet database, while the latter 
+might be something that manipulates the metadata of an existing document
+in some way.
+<p>Interested developers should download the 
+<a href="http://icculus.org/referencer/development.html">referencer
+source code</a> and look in the <span style="font-family:monospace">plugins/</span>
+directory for examples and in plugins/README for a brief guide.
+</p>
+
+</div> <!-- /left -->
+
+<div class="menubox">
+<div id = "updates">
+<h2>Updates</h2>
+<p>For the most recent documentation, visit the <a href="http://icculus.org/referencer/">homepage</a>.</p>
+</div>
+</div>
+
+</div> <!-- /main -->
+
+</body>
+
+</html>
+
+

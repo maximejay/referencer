@@ -1,0 +1,178 @@
+1.1.6:
+	- Work around gconf bug (gnome #586532)
+	- Include document key when searching
+	- Don't attempt to retrieve text for non-pdf files
+	- Improved search (Robert Vincent)
+	- Strip leading tokens from DOIs (Bug 385913)
+	- Clickable document icon in DocumentProperties
+	- Support complimentary crossref accounts (Bug 373342)
+	- Fix mnemonic for Type field in DocumentProperties (Bug 377221)
+	- Prevent creation of duplicate tag names (Bug 339593)
+	- Include document notes in searches
+	- Plugin interface: add bibtex_to_fields utility function, 
+	  add print_bibtex method to PythonDocument
+	- Docbook manual (Mario Blätterman)
+	- UI tweaks (Kai Willadsen, Bugs 297081, 297079)
+
+1.1.5:
+	- Change 'keywords' to 'tags' in bibtex export
+	- Add DOI entry to document properties (Andreas Dalsgaard)
+	- Add menu item for selecting sort mode
+	- Mark library as dirty when executing plugin action
+	- Fix crash when tagging (Bug 258780)
+
+1.1.4:
+	- Fix python get_filename and set_filename (Bug 258103)
+	- Fix import of 'series' field in bibtex InProceedings (Bug 255815)
+	- Fix escaping URLs in crossref plugin (Bug 246421)
+	- Fix exceptions with exotic characters on latin1 systems
+	- Fix out of date tag action strings (Bug 247557)
+	- Fix crashing on opening docs with keybaord (Bug 235270)
+
+1.1.3:
+	- Annotation support (Charlotte Curtis)
+	- Support import of UTF8 bibtex (Bug 223763, Sergey B Kirpichev's patch)
+	- Fix detection of crossref query failure
+	- Fix crash in crossref parsing (Bug 222340)
+	- Fix crash in bibtex import (Bug 217866)
+	- Fix failing to set fields in list view (Bug 208184)
+
+1.1.2:
+	- Remove tooltips on old GTK versions
+	- Report errors when a plugin cannot be enabled
+	- Updated translations
+	- Shortcut buttons on document icons
+	- Fix using old tooltip code even with recent GTK
+	- UI for attaching tags during adding files
+	- Pubmed: fill out DOI field, use full first names (Aurélien Naldi)
+	- Search searches all fields (Bug 198671)
+	- Revised tagging UI
+	- Expand plugin API
+	- Unbreak sorting in list view (Bug 202188)
+1.1.1:
+	- Updated Russian translation (Sergey Kirpichev)
+	- Updated simplified Chinese translation (Zhi-Wei Huang)
+	- Updated Danish translation (Andreas Dalsgaard)
+	- Fix parsing data-less elements in pubmed plugin (Bug 196174)
+	- Fix paste in document properties (Bug 195819)
+	- Fix add doc with ID dialog
+	- Make "All" and "Untagged" immutable, add separator (Bug 192680, Jochen Martin Eppler)
+	- Check for zero-sized thumbnails (Bug 192279)
+	- Add parse_bibtex to PythonDocument
+	- Fix compilation with gcc 4.3 (Deji Akingunola)
+
+1.1.0:
+	- Update to bibutils 3.39
+	- Detailed report in add documents dialog
+	- Thumbnails generated asynchronously for more responsive loading
+	- Support document action plugins (AN + JCS)
+	- Lyx citation plugin (Aurélien Naldi)
+	- Added documents are scrolled to
+	- DocumentProperties shows correct fields depending on document type
+	- Add google scholar web link
+	- Add PubMed web link
+	- Allow specific selection of different web links
+	- Add builtin generic document icon
+	- Paste BibTeX button in document properties
+	- Clear button in document properties
+	- Editable list view
+	- Fix crash in tagging 
+	- Revised icon view
+	- Pick up when citebase gives us a doi: in the URL field
+	- Add preferences options for crossref username/password
+	- Remove preferences options for crossref path + dx.doi.org path
+	- Metadata plugins (C++ or python)
+	- DOI->Pubmed resolver (Simon Greenhill)
+	- Make multiple-tag filtering AND instead of OR
+	- Fix losing bibtex fields in import (Bug 158581)
+	- Fix missing some fields in getArxiv (Bug 158815)
+	- Use gtkmm 2.12 IconView tooltip support if available
+	- Add online/offline indicator in statusbar
+	- Change sizing options of icon view to work around Gnome 2.20
+	- Use filename as title when adding files without metadata
+	- Make the extras store case insensitive on the key: multiple
+	  fields differing only in case are no longer allowed (Alexey Balmashnov)
+	- Use the 'url' extra field for web linking (Alexey Balmashnov)
+	- Handle multiple keyword fields in import (Alexey Balmashnov)
+	- Include doi field in bibtex export
+	- Fix generating thumbnails for non-pdf files
+
+1.0.4:
+	- Fix import in non-UTF8 locales
+	- Tags exported as "keywords" bibtex field
+	- Add clear icon to search entry
+	- Remember window size
+	- Tags sorted by name
+	- Tooltips in icon view
+	- German translation (Joachim Sauer)
+	- Don't add .svn,CVS,.bib,.reflib when adding folder
+	- Spanish translation (Mario César Señoranis Ayala)
+	- Fixes for 64 bit architecture
+	- Remove "Add Tag" dialog (Eric Lesh)
+	- Add statusbar, replace progressdialog with progressbar
+		in statusbar.
+	- Prompt user to resolve duplicated files
+	- Update bibutils to 3.32
+	- Generate thumbnails for files on NFS mounts
+	- Improved internationalization support
+	- Prevent search box getting hidden in small windows
+	- Ability to paste bibtex
+	- Ability to copy \cite{keys}
+
+1.0.3:
+	- Option to export unicode bibtex
+	- Implement "Manage BibTeX File"
+	- Support new arXiv id format
+	- Stop reading document if DOI/Arxiv is found on first page
+	- Fix setting dirtyness of library in "Rename from Key" (Jordy Potman)
+	- Reduce window clutter (Kai Willadsen)
+	- Italian translation (Michele Mattioni)
+	- Improve translatability of code (Kai Willadsen)
+	- Intltool fixes (Eric Lesh)
+	- Fix(?) taglist corruption bug
+	- Use poppler glib bindings (Kai Willadsen)
+	- Start using ucompose.hpp for string composition
+	- Compile against mt-only boost_regex (Damien Thébault)
+	- Fix "All files" filter to be * instead of *.*
+	- Support InProceedings crossref records
+	- RPM spec file (Davyd Madeley)
+	- Add texttrademark unicode->latex
+	- Make configure fail properly when boost_regex is absent (Aiden Delaney)
+	- Fix handling of escape key in dialogs
+
+1.0.2:
+	- Handle "Digital Object Identifier 10.1109..." (Jordy Potman)
+	- Handle CDATA enclosure of titles (Jordy Potman)
+	- Escape ampersands in bibtex export
+	- Options for setting gnome proxy in Preferences
+	- Fix thumbnail sizing bug
+	- Special case for getting dois like "doi: blah/blah, more text" to 
+		ignore trailing comma.
+	- Add progress dialog when loading library
+	- Improved keyboard behaviour in main window and in document properties
+	- Fix 'remove' failing with duplicate keys
+	- Add "Delete File from Drive"
+	- Add "Rename File to Key"
+	- Add/fix some accelerators
+	- Fix ./configure failing on Ubuntu 6.06
+	- Add option to enclose all values in {} when exporting bibtex
+	- Fix crash opening files which no longer exist (Andreas Dalsgaard)
+	- Fix saving broken to FS away from $HOME (Andreas Dalsgaard)
+
+1.0.1:
+	- Save and load relative filenames as well as absolute filenames
+	- When opening library, clear bibdata in between docs (Rodrigo Kassick)
+	- Make SaveLibrary insensitive when library not dirty
+	- Switch to autotools (Eric Lesh)
+	- Open properties on double click as last resort
+	- Import stuff:
+		- Fix getting type wrong for PhdThesis
+		- Fix bibtex import getting confused about certain accents (Chris Putnam)
+		- Fix import dialog ignoring choice of file format
+		- Fix chapter fields in incollection items in bibtex import
+		- Understand translator fields in import
+		- Don't extra fields for import fields with no value string
+		- Import from MODS
+		- Hide non-functional "auto-detect" option in import dialog
+
+1.0.0: Initial release

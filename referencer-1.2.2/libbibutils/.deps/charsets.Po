@@ -1,0 +1,5 @@
+charsets.o: charsets.c /usr/include/stdc-predef.h charsets.h
+
+/usr/include/stdc-predef.h:
+
+charsets.h:

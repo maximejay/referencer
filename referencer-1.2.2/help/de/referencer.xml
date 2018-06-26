@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "1.1.6">
+<!ENTITY manrevision "1.1.6">
+<!ENTITY date "October 2008">
+<!ENTITY appname "Referencer">
+<!ENTITY app "<application>&appname;</application>">
+<!-- Information about the entities
+       The legal.xml file contains legal information, there is no need to edit the file. 
+       Use the appversion entity to specify the version of the application.
+       Use the manrevision entity to specify the revision number of this manual.
+       Use the date entity to specify the release date of this manual.
+       Use the app entity to specify the name of the application. -->]>
+<article id="index" lang="de">
+  <articleinfo>
+    <title><application>Referencer</application>-Handbuch V1.1.6</title>
+    <abstract role="description">
+      <para>Referencer ist ein Werkzeug, das Ihnen bei der Verwaltung Ihrer Dokumentensammlung hilft und aus Ihren Dokumenten eine Bibliografie erstellt.</para>
+    </abstract>
+    <copyright> 
+      <year>2008</year> 
+      <holder>John Spray</holder> 
+    </copyright><copyright><year>2008</year><holder>Mario Blättermann (mariobl@gnome.org)</holder></copyright>
+    <publisher> 
+      <publishername>Referencer-Entwickler-Team</publishername> 
+    </publisher> 
+      <legalnotice id="legalnotice">
+	<para>Das vorliegende Dokument kann gemäß den Bedingungen der GNU General Public License (GPL), Version 2 kopiert, verteilt und/oder modifiziert werden. Eine Kopie der GPL finden Sie unter diesem <ulink type="help" url="ghelp:gpl">Link</ulink> oder in der mit diesem Handbuch gelieferten Datei COPYING.</para>
+  </legalnotice>
+
+
+    <authorgroup>
+      <author role="maintainer">
+	<firstname>John</firstname> <surname>Spray</surname>
+	<affiliation>
+	  <address>
+	    <email>jcspray@icculus.org</email>
+	  </address>
+	</affiliation>
+      </author> 
+    </authorgroup>
+    <revhistory>
+      <revision>
+	<revnumber>Referencer-Handbuch V 1.1.6</revnumber>
+	<date>22. Oktober 2008</date>
+	<revdescription>
+	  <para role="author">John Spray</para>
+	</revdescription>
+      </revision>
+    </revhistory>
+
+    <releaseinfo>This manual describes version 1.1.6 of Referencer.
+    </releaseinfo> 
+      <legalnotice> 
+      <title>Rückmeldungen</title> 
+      <para>Um Fehler zu melden oder einen Vorschlag zur Anwendung <application>Referencer</application> oder zu diesem Handbuch zu machen, besuchen Sie bitte die <ulink url="http://icculus.org/referencer" type="help">Referencer-Website</ulink>.</para>
+      </legalnotice>
+  </articleinfo>
+
+  <sect1 id="intro">
+    <title>Einführung</title>
+      <para><application>Referencer</application> ist ein Werkzeug, das Ihnen bei der Verwaltung Ihrer Dokumentensammlung hilft und aus Ihren Dokumenten eine Bibliografie erstellt. Es wurde für die Anforderungen des Wissenschaftlers und Forschers entwickelt, wobei »Dokument« sich auf »Papier« im Allgemeinen bezieht, obgleich <application>Referencer</application> mit allen von BibTex verarbeitbaren Dokumenten umgehen kann.</para>
+      </sect1>
+      
+      <!-- =========== Getting Started ============================== -->
+<!-- Use the Getting Started section to describe the steps required
+     to start the application and to describe the user interface components
+     of the application. If there is other information that it is important
+     for readers to know before they start using the application, you should
+     also include this information here.
+     If the information about how to get started is very short, you can
+     include it in the Introduction and omit this section. -->
+
+  <sect1 id="referencer-getting-started">
+    <title>Erste Schritte</title>
+
+    <sect2 id="referencer-start">
+      <title><application>Referencer</application> starten</title>
+      <para>Sie können <application>Referencer</application> auf folgende Arten starten:</para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Menü <guimenu>Anwendungen</guimenu></term>
+          <listitem>
+            <para>Wählen Sie <menuchoice><guisubmenu>Büroanwendungen</guisubmenu><guimenuitem>Referencer</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Befehlszeile</term>
+          <listitem>
+            <para>Um <application>Referencer</application> aus einer Befehlszeile zu starten, geben Sie folgenden Befehl ein und drücken dann die <keycap>Eingabetaste</keycap>:</para>
+            <para><command>referencer</command></para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="referencer-when-start">
+      <title>Beim Start von <application>Referencer</application></title>
+      <para>Wenn Sie <application>Referencer</application> starten, wird folgendes Fenster angezeigt.</para>
+
+      <figure id="referencer-window-fig">
+        <title><application>Referencer</application>-Startfenster</title>
+        <screenshot>
+          <mediaobject>
+            <imageobject><imagedata fileref="figures/referencer_window.png" format="PNG"/></imageobject>
+            <textobject><phrase>Shows <application>Referencer</application> main window.</phrase></textobject>
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+      <para>Das <application>Referencer</application>-Fenster enthält folgende Elemente:</para>
+
+      <variablelist>
+        <varlistentry>
+          <term>Menüleiste</term>
+          <listitem>
+            <para>Die Menüs in der Menüleiste enthalten alle Befehle, die Sie zum Arbeiten mit Dateien in <application>Referencer</application> benötigen.</para>            
+          </listitem>
+        </varlistentry>
+        
+		<varlistentry>
+          <term>Werkzeugleiste</term>
+          <listitem>
+            <para>Die Werkzeugleiste ermöglicht Ihnen den schnellen Zugriff auf häufig benutzte Menüeinträge.</para>
+          </listitem>
+        </varlistentry>
+ 
+        <varlistentry>
+          <term>Dokumentenliste</term>
+          <listitem>
+            <para>Die Dokumentenliste zeigt eine Liste der Dokumente der Bibliothek an, in welcher Sie gegenwärtig arbeiten. Die Anzeige ist entweder in der <guimenuitem>Listenansicht</guimenuitem> oder in der <guimenuitem>Symbolansicht</guimenuitem> möglich.</para>
+          </listitem>
+        </varlistentry>       
+
+        <varlistentry>
+          <term>Markenleiste</term>
+          <listitem>
+            <para>Die Markenleiste stellt eine Liste von Marken bereit, die zu Dokumenten hinzugefügt werden können, und zwar in Form von Knöpfen zum Hinzufügen und Entfernen von Marken. Die Dokumentenliste kann anhand bestimmter Marken gefiltert werden, indem Sie die entsprechenden Marken in der Markenleiste auswählen.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+  
+  <sect1 id="usage">
+      <title>Benutzung</title>  
+   
+   <para>Das grundlegende Anwendungsgebiet von <application>Referencer</application> ist das Bearbeiten von Dokumenten und bibliografischen Daten (Bibliotheken). Allerdings bietet die Anwendung auch einige zeitsparende Funktionen. Die wichtigste davon ist das automatische Ergänzen bibliografischer Informationen (Metadaten) für einige Dokumenttypen.</para>
+  
+  <para>Wenn Sie eine PDF-Datei zu Ihrer <application>Referencer</application>-Bibliothek hinzufügen, wird diese Datei automatisch nach Schlüsseln wie dem DOI-Code oder arXiv-Kennungen durchsucht. Falls eines davon gefunden wird, benutzt <application>Referencer</application> Ihre Internetverbindung, um die Metadaten für dieses Dokument zu holen.</para>
+  
+  <note>
+	  <para>Falls Sie bereits über eine Sammlung bereits heruntergeladener PDF-Dateien oder Papiere verfügen, erspart Ihnen dies eine Menge Tipparbeit!</para>
+  </note>
+  
+  <para><application>Referencer</application> benutzt auch seine Kenntnisse im Umgang mit Papieren zur Bereitstellung praktischer Funktionen wie dem Öffnen einer mit dem Artikel verbundenen Website, oder dem Öffnen des Dokuments selbst. Zusätzlich können Sie zur Kategorisierung der Dokumente Marken hinzufügen. Dadurch lässt sich die Dokumentenbibliothek leichter durchsuchen, indem sie anhand der Marken gefiltert wird.</para>
+  
+  <para><application>Referencer</application> ist extrem benutzerfreundlich angelegt, aber um Ihnen den Einstieg so unkompliziert wie möglich zu gestalten, beschreiben die folgenden Unterabschnitte, wie Sie <application>Referencer</application> benutzen.</para>
+  
+  
+  
+  <sect2 id="howto-bibtex">
+      <title>Verwendung von <application>Referencer</application> mit BibTex</title> 
+      <para><application>Referencer</application> lädt nicht nur BibTex-Dateien und bearbeitet diese, sondern verwaltet seine eigene Dokumentenbibliothek. Wenn Sie Ihre Bibliothek in einem LaTex-Dokument verwenden wollen, können Sie durch <application>Referencer</application> eine BibTex-Datei erzeugen lassen. Wählen Sie hierzu <menuchoice><guisubmenu>Bibliothek</guisubmenu><guimenuitem>BibTex exportieren</guimenuitem></menuchoice>. Standardmäßig schließt dies alle Dokumente in Ihrer Bibliothek ein. Falls Sie nur einige Dokumente exportieren wollen, können Sie das Feld <guilabel>Auswahl:</guilabel> im Exportdialog verwenden, um den Export auf bestimmte Dokumente zu beschränken. Um immer wiederkehrendes Exportieren nach Änderungen zu vermeiden, können Sie <application>Referencer</application> anweisen, nach jeder Änderung die BibTex-Datei neu zu speichern. Wählen Sie hierzu <menuchoice><guisubmenu>Bibliothek</guisubmenu><guimenuitem>BibTex-Datei verwalten</guimenuitem></menuchoice></para>
+              
+              <para><application>Referencer</application> wandelt automatisch spezielle Zeichen (z.B. <literal>ß</literal>) in die <application>LaTex</application>-Entsprechungen um (im genannten Fall <literal>\ss</literal>). Abhängig von dem in Ihren Arbeiten verwendeten BibTex-Stil könnte sich die Großschreibung im Text der LaTex-Ausgabe von der in Ihrer <application>Referencer</application>-Bibliothek unterscheiden, weil das den Veröffentlichern ermöglicht, ihre eigenen Großschreibungs-Schemen durchzusetzen. Falls Sie die Großschreibung in Ihren Arbeiten exakt so erhalten möchten wie in Ihrer Bibliothek, dann können Sie dazu die Option <guilabel>Großschreibung schützen</guilabel> im BibTex-Exportdialog verwenden.</para>
+              
+              <para>Falls sie bereits über eine BibTex-Datei verfügen, können Sie diese durch <application>Referencer</application> importieren lassen. Wählen Sie <menuchoice><guisubmenu>Bibliothek</guisubmenu><guimenuitem>Importieren...</guimenuitem></menuchoice> aus der Menüleiste.</para>
+              
+	      <note><para>Das Importieren und anschließende Exportieren als BibTex-Datei garantiert (oder beabsichtigt) nicht, dass Sie exakt die gleiche Datei erhalten wie vor dem Import: <application>Referencer</application> ist kein BibTex-Editor!</para></note>
+              
+              <para>Informationen wie die Dateinamen der Dokumente und die Markierungen sind in den BibTex-Dateien nicht enthalten. Sie sollten stets Ihre <application>Referencer</application>-Bibliotheksdatei als maßgebende Kopie verwenden.</para>
+
+</sect2>  
+  <sect2 id="howto-add-docs">
+      <title>Hinzufügen von Dokumenten</title> 
+      
+   	<sect3 id="howto-add-docs-by-file">
+      <title>Hinzufügen von Dokumenten nach Datei oder Ordner</title>
+      	<para>Wählen Sie <menuchoice><guisubmenu>Dokumente</guisubmenu><guimenuitem>Datei hinzufügen…</guimenuitem></menuchoice> aus der Menüleiste.</para>
+        <para>Falls Sie Referencer über vorhandene Dokumentdateien in Kenntnis setzen wollen, können Sie eine oder mehrere Dateien oder auch einen ganzen Ordner hinzufügen. Wählen Sie <menuchoice><guisubmenu>Dokumente</guisubmenu><guimenuitem>Ordner hinzufügen …</guimenuitem></menuchoice>, und <application>Referencer</application> erstellt Einträge für jede Datei. PDF-Dateien werden gelesen, und <application>Referencer</application> tut sein bestes, um die Metadaten für Sie hinzuzufügen.</para>
+	      <note><para>Wenn Sie einen Ordner oder Dateien hinzufügen, werden Objekte namens ».svn«, »CVS«, Dateien mit den Erweiterungen ».bib« oder ».reflib» sowie Dateien, deren Namen mit ».« beginnen, automatisch übersprungen. Diese Dateien können jedoch individuell hinzugefügt werden.</para></note>
+   	</sect3>
+   	<sect3 id="howto-add-docs-by-DOI">
+      <title>Hinzufügen von Dokumenten anhand des DOI-Codes</title>
+      	<para>Wählen Sie <menuchoice><guisubmenu>Dokumente</guisubmenu><guimenuitem>Dokument mit DOI hinzufügen…</guimenuitem></menuchoice> aus der Menüleiste.</para>
+        <para>Falls Sie über den DOI-Code für ein Papier verfügen, können Sie sich die Mühe der Eingabe der Metadaten ersparen, indem Sie <application>Referencer</application> anhand des DOI-Codes für Sie nach den Metadaten suchen lassen.</para>
+   	</sect3>
+   	<sect3 id="howto-add-docs-by-hand">
+      <title>Manuelles Hinzufügen von Dokumenten</title>
+      	<para>Wählen Sie <menuchoice><guisubmenu>Dokumente</guisubmenu><guimenuitem>Leere Referenz hinzufügen…</guimenuitem></menuchoice> aus der Menüleiste.</para>
+        <para>Nicht zuletzt stellt <application>Referencer</application> auch eine einfache Oberfläche für das manuelle Erzeugen eines Dokuments und die Eingabe der Metadaten bereit. Ein Dokument ohne Informationen wird erzeugt und ein Eigenschaftsdialog geöffnet, in dem Sie einen Namen für das Dokument und einige Metadaten eingeben können.</para>
+   	</sect3>
+   	<sect3 id="howto-add-docs-from-bibtex">
+      <title>Hinzufügen von Dokumenten aus einer BibTeX/EndNote/Refer-Datei</title>
+      <para>Wählen Sie <menuchoice><guisubmenu>Bibliothek</guisubmenu><guimenuitem>Importieren…</guimenuitem></menuchoice> aus der Menüleiste.</para>
+              <para>Ihre vorhandenen Bibliografie-Dateien und auch Schnipsel aus Websites können importiert werden. Die Objekte aus solchen Dateien werden geladen und zur gegenwärtig geöffneten Bibliothek hinzugefügt.</para>
+   	</sect3>
+   	<sect3>
+      <title>Hinzufügen von Dokumenten mittels Kopieren und Einfügen</title>
+      <para>Choose <menuchoice><guisubmenu>Edit</guisubmenu>
+              <guimenuitem>Paste BibTex</guimenuitem></menuchoice> from the menubar.
+      </para>
+      <para>Um bequem Referenzen aus dem Web oder Referenzen aus einer vorhandenen BibTex-Datei zu importieren, können Sie diese einfach kopieren und in Referencer einfügen. Diese Referenzen werden auf die gleiche Weise hinzugefügt, als wären sie aus einer Datei importiert worden.</para>
+   	</sect3>
+   </sect2>
+   
+   <sect2 id="howto-use-different-docs">
+      <title>Verwendung verschiedener Dokumenttypen und -felder</title> 
+      <para>Die Benutzeroberfläche von <application>Referencer</application> ist für den Umgang mit wissenschaftlichen Papieren optimiert. Daher ist der vorgegebene Dokumenttyp »Article« und Felder wie <guilabel>Title</guilabel>, <guilabel>Authors</guilabel>, <guilabel>Journal</guilabel> und <guilabel>Volume</guilabel> werden angezeigt. Andere Dokumenttypen können im Eigenschaftsdialog gewählt werden. Um diesen zu öffnen, wählen Sie <menuchoice><guisubmenu>Dokumente</guisubmenu><guimenuitem>Eigenschaften</guimenuitem></menuchoice> aus der Menüleiste.</para>
+              
+              <para>Falls nicht der von Ihnen gewünschte BibTex-Typ angezeigt wird, geben Sie ihn einfach ein und er wird unverändert beim Exportieren Ihrer BibTex-Datei übernommen. Einige Dokumenttypen erfordern zusätzliche Metadatenfelder, beispielsweise sollten »Book«-Dokumente über ein »Editor«-Feld verfügen. Diese können Sie durch Ausklappen des Abschnitts <guilabel>Zusätzliche Felder</guilabel> im Eigenschaftsdialog und Anklicken des Symbols <guilabel>Neu</guilabel> hinzufügen. Um Daten in das neue Feld einzugeben, wählen Sie es aus und klicken Sie auf das Symbol <guilabel>Bearbeiten</guilabel>.</para>
+
+
+   </sect2>
+  </sect1>
+  
+  <sect1 id="tagging-searching">
+      <title>Markieren und Suchen</title> 
+      <para>Das Markieren ermöglicht Ihnen die Kategorisierung Ihrer Dokumente. Im Gegensatz zur traditionellen hierarchischen Ordnerstruktur erlaubt ein auf Markierungen basierendes System, ein Dokument mehreren einander überlappenden Kategorien zuzuordnen. Beispielsweise verfügen Sie über Marken wie »Physik« und »Biologie« sowie eine weitere namens »Wichtige Papiere«. Falls es sich dabei um Ordner handelt, müssen Sie willkürlich festlegen, wo Sie ein Papier einordnen wollen. Hier jedoch können Sie sowohl »Physik« als auch »Wichtige Papiere« verwenden, und wenn die Wichtigkeit nicht mehr gegeben ist, dann entfernen Sie einfach die Marke »Wichtige Papiere«.</para>
+	  <para>Sobald Sie durch <menuchoice><guisubmenu>Marken</guisubmenu><guimenuitem>Marke erzeugen …</guimenuitem></menuchoice> eine Marke erzeugt haben, erscheint in der unteren Hälfte der Markenleiste ein Kontrollkästchen. Die Markenleiste können Sie aktivieren oder deaktivieren, indem Sie die Option <menuchoice><guisubmenu>Ansicht</guisubmenu><guimenuitem>Markenleiste anzeigen</guimenuitem></menuchoice> wählen. Nach der Auswahl eines oder mehrerer Dokumente setzen oder entfernen Sie eine Marke, indem Sie in das Kontrollkästchen klicken.</para>
+	  <para>Wenn Sie einige Dokumente markiert haben, möchten Sie vielleicht die Ansicht nach Marken filtern. Klicken Sie dazu auf eine Marke in der Liste in der oberen Hälfte der Markenleiste. Um mehrere Marken auszuwählen, halten Sie dazu die <keycap>Strg</keycap>-Taste gedrückt.</para>
+	  <para>Als Ergänzung des Marken-Systems wird oberhalb der Dokumentenansicht ein Suchfeld angezeigt. Wenn Sie hier Text eingeben, werden nur Dokumente angezeigt, die diesen Text enthalten. Die Suche berücksichtigt nur die Felder <guilabel>Title</guilabel>, <guilabel>Authors</guilabel> und <guilabel>Key</guilabel> des Dokuments.</para>
+
+   </sect1>
+   
+   <sect1 id="plugins">
+      <title>Plugins</title> 
+      <para>Zusätzliche Funktionalität kann <application>Referencer</application> mit Hilfe der vielseitigen Skriptsprache <ulink url="http://www.python.org" type="http">Python</ulink> verliehen werden. Seit Version 1.1 werden zwei Arten von Plugins unterstützt: <application>Metadata fetcher</application>-Plugins und <application>Document action</application>-Plugins. Das erstere ist ein Skript, das nach Metadaten des DOI-Codes in einer Internet-Datenbank sucht, das letztere dient zur Bearbeitung der Metadaten eines vorhandenen Dokuments auf verschiedene Weise.</para>
+      
+      <para>Interessierte Entwickler sollten den <application>Referencer</application>-Quellcode herunterladen. Im Ordner plugins/ befinden sich Beispiele sowie in plugins/README eine Kurzanleitung.</para>
+
+
+   </sect1>
+   
+   <!-- ============= About ================================== -->
+<!-- This section contains info about the program (not docs), such as
+      author's name(s), web page, license, feedback address. This
+      section is optional: primary place for this info is "About.." box of
+      the program. However, if you do wish to include this info in the
+      manual, this is the place to put it. Alternatively, you can put this information in the title page.-->
+  <sect1 id="gnome-lirc-properties-about">
+    <title>Info zu <application>Referencer</application></title>
+
+    <para><application>Referencer</application> und dieses Handbuch wurden von John Spray (<email>jcspray@icculus.org</email>) geschrieben. Einige Beiträge zu diesem Handbuch kamen von Mario Blättermann (<email>mario.blaettermann@t-online.de</email>. Weitere Informationen über <application>Referencer</application> sowie die aktuellste Dokumentation finden Sie auf der <ulink url="http://icculus.org/referencer" type="http">Projekt-Website</ulink>.</para>
+    <para>Dieses Programm ist freie Software. Sie können es unter den Bedingungen der <citetitle>GNU General Public License</citetitle>, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 2 der Lizenz oder (nach Ihrer Option) jeder späteren Version. Eine <ulink url="ghelp:gpl" type="help">Kopie dieser Lizenz</ulink> ist in dieser Dokumentation enthalten, eine weitere in der Datei COPYING, die im Quellcode dieses Programms enthalten ist.</para>
+  </sect1>
+
+</article>

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Referencer
+Comment=Document organiser
+Exec=referencer %F
+TryExec=referencer
+Icon=referencer
+Terminal=false
+Type=Application
+Categories=GTK;GNOME;Office;
+StartupNotify=true
+MimeType=application/x-referencer;

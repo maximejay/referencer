@@ -1,0 +1,109 @@
+
+
+Plugin ideas:
+	mangle/demangle Doe, J vs Doe, J.
+
+	Browse/search:
+		Z39.50
+		PubMed
+
+	"More by this author" on pubmed and google
+
+
+There is no release schedule.
+	Fix the document properties and storage
+		- Merge BibData and Document
+		- Add protect flag for user edits
+		- Revise file format (dublin core?)
+		- Properties pane in RefWindow
+
+	Simplify tagging internals
+		- Do away with magic UIDs and pass strings around
+
+	ListView users are people too:
+		- Sort out the column sizing
+		- Adding/removing columns
+
+	Getting text from .ps files (a la ps2ascii)
+	Refine tagging UI:
+		Text entry view of tags
+	Deal with external added URIs
+		UI for setting "library directory"
+		Offer to move files not in subdir of reflib location
+
+	OAI support:
+		Arxiv database
+			http://arxiv.org/oai2
+		PubMed database
+			http://www.pubmedcentral.nih.gov/oai/oai.cgi
+
+	Integration with Tracker and/or Beagle
+	
+
+Bugs
+====
+
+In TagWindow::onIconsDragData, we do get_file_info on remote URIs synchronously
+	in order to support directory recursion on remote filesystems -- this is a 
+	bad thing when adding stuff from really remote things like websites
+
+Paste from gecko doesn't seem to work
+
+When importing endnote, %Y is series editor, but this is lost by bibutils for refs of inappropriate type.  %Y is used in pablo's file as generic author. - that was with endnote 3, try with more recent endnote	
+
+
+Unscheduled items
+=================
+
+Import of reflib files (merge in documents, resolve tag IDs)
+
+Verify that UTF-8 export works as per user expectations
+
+Improve BibTeX export robustness
+	What about underscores?  Need an "escape everything" mode?
+	Insert \url bits
+	Document requirements/exceptions
+
+Support new endxmlin, isiout and wordout from bibutils >= 3.31
+
+Possible items
+==============
+
+Edit menu:
+	- Copy key
+	- copy filename
+	- copy bibtex
+
+Functionality wishlist:
+	Parse strings "Title: foo\nISBN: bar\n" like recipe manager
+	Formatted bibliographies with Rtfbtx?
+	Import "keywords" field in bibtex, map to referencer tags
+	Move file to trash instead of deleting
+	Set tags based on folder names when doing recursive import (Wilhelms, C.)
+	Create a gconf schema
+	Get document type from crossref XML instead of assuming Article
+	When generating keys from authorYEAR, should get rid of LaTeX unfriendly accented characters
+	Where we use ".tmp" in writing files, we should use something more unique
+	Do something with PDF-embedded metadata if there is any
+	Assign a color to a tag and highlight refs with it
+	Use installed libsexy if available, a la rhythmbox
+	Resolve symlinks before doing relative filename magic
+
+UI wishlist:
+	say "1 document" instead of "1 documents" in statusbar
+	Drag and drop to make LaTeX citations
+	Drag and drop to import bibtex snippets
+	Configuration of max_timeout in BibData::getCrossRef
+
+The Competition
+===============
+
+EndNote
+	EndNote is somewhat DOI aware, dx.doi.org URLs generated when importing reference from eg INSPEC
+Reference Manager
+ProCite
+RefWorks
+Zotero
+Yep
+http://mekentosj.com/papers/
+http://refbase.sourceforge.net/
