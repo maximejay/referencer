@@ -13,13 +13,15 @@ apps:
     desktop: share/applications/referencer.desktop
     environment:
       PYTHONPATH: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/dist-packages/:$SNAP/usr/lib/python2.7/dist-packages/gi/:$SNAP/usr/lib/python2.7/dist-packages/gi/overrides/:$SNAP/lib/referencer/:$PYTHONPATH
-#      PYTHONHOME: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:/$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:/$SNAP/lib/referencer/:$PYTHONHOME
 
     plugs: 
         - x11
         - home
         - desktop
         - network
+        - desktop-legacy
+        - wayland
+        - dbus
     
 parts:
   referencer:
@@ -33,8 +35,8 @@ parts:
         - build-essential
         - gnome-doc-utils
         - intltool
-        - python2.7-dev
-        - libpython2.7-dev
+        - python2.7-dev #Est-ce encore nécéssaire => car déplacer dan pythonsource
+        - libpython2.7-dev #Est-ce encore nécéssaire => car déplacer dan pythonsource
         - libxml2-dev
         - libpoppler-glib-dev
         - libgconfmm-2.6-dev
@@ -54,17 +56,17 @@ parts:
         - libglibmm-2.4-1v5
         - libpoppler-glib8
         - libpoppler58
-        - python2.7
-        - libpython2.7
+        - python2.7 #Est-ce encore nécéssaire => à déplacer dan pythonsource
+        - libpython2.7 #Est-ce encore nécéssaire => à déplacer dan pythonsource
         - libgtkmm-2.4-1v5
         - libboost-regex1.58.0
         - libsigc++-2.0-0v5
   
-  pythonsource:
+  pythonsource: #A renomer en referencer-plugins par exemple
     plugin: nil
     stage-packages:
         - python2.7-dev
         - libpython2.7-dev
-        - python-gi-dev #Genere une erreur ! dans la compilation !
+        - python-gi-dev #Est-ce nécéssaire ?
         - python-gtk2
         - python-gobject-2
