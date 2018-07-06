@@ -12,11 +12,9 @@ apps:
     command: desktop-launch $SNAP/bin/referencer
     desktop: share/applications/referencer.desktop
     environment:
-      PYTHONPATH: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:$SNAP/lib/referencer/:$PYTHONPATH
-      PYTHONHOME: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:/$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:/$SNAP/lib/referencer/:$PYTHONHOME
-#      datadir: $SNAP/share/referencer/
-#      datarootdir: $SNAP/share/referencer/
-#      prefixe: $SNAP/
+      PYTHONPATH: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/dist-packages/:$SNAP/usr/lib/python2.7/dist-packages/gi/:$SNAP/usr/lib/python2.7/dist-packages/gi/overrides/:$SNAP/lib/referencer/:$PYTHONPATH
+#      PYTHONHOME: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:/$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:/$SNAP/lib/referencer/:$PYTHONHOME
+
     plugs: 
         - x11
         - home
@@ -28,10 +26,9 @@ parts:
     # See 'snapcraft plugins'
     plugin: autotools   
     source: ./referencer-1.2.2/
-#    organize:
-#      share/referencer : data/
     after: 
         - desktop-gtk2
+        - pythonsource
     build-packages:
         - build-essential
         - gnome-doc-utils
@@ -62,12 +59,12 @@ parts:
         - libgtkmm-2.4-1v5
         - libboost-regex1.58.0
         - libsigc++-2.0-0v5
-        
-#  python-plugins:
-#    source: ./referencer-1.2.2/plugins/
-#    plugin: python
-#    python-version: 'python2'
-#    stage-packages:
-#        - python-gobject
-#        - python-gi
-    
+  
+  pythonsource:
+    plugin: nil
+    stage-packages:
+        - python2.7-dev
+        - libpython2.7-dev
+        - python-gi-dev #Genere une erreur ! dans la compilation !
+        - python-gtk2
+        - python-gobject-2
