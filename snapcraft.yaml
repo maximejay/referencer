@@ -7,10 +7,27 @@ grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 icon: ./referencer-1.2.2/data/referencer.svg
 
+#plugs:
+#  dbus-actions: # name this whatever you want
+#    interface: dbus
+#    bus: session
+#    name: org.gtk.Actions
+    
+#  dbus-menus: # name this whatever you want
+#    interface: dbus
+#    bus: session
+#    name: org.gtk.Menus
+    
+#  dbus-gconf: # name this whatever you want
+#    interface: dbus
+#    bus: session
+#    name: org.gnome.GConf.Client
+    
 apps:
   referencer:
     command: desktop-launch $SNAP/bin/referencer
     desktop: share/applications/referencer.desktop
+#    slots: [ dbus-actions dbus-menus dbus-gconf ]
     environment:
       PYTHONPATH: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/dist-packages/:$SNAP/usr/lib/python2.7/dist-packages/gi/:$SNAP/usr/lib/python2.7/dist-packages/gi/overrides/:$SNAP/lib/referencer/:$PYTHONPATH
 
@@ -18,10 +35,17 @@ apps:
         - x11
         - home
         - desktop
+        - unity7
+#        - network-control
+#        - mount-observe
+#        - gsettings
         - network
         - desktop-legacy
         - wayland
-        - dbus
+#        - classic-support
+#        - dbus-actions
+#        - dbus-menus
+#        - dbus-gconf
     
 parts:
   referencer:
@@ -30,13 +54,11 @@ parts:
     source: ./referencer-1.2.2/
     after: 
         - desktop-gtk2
-        - pythonsource
+        - referencer-plugins
     build-packages:
         - build-essential
         - gnome-doc-utils
         - intltool
-        - python2.7-dev #Est-ce encore nécéssaire => car déplacer dan pythonsource
-        - libpython2.7-dev #Est-ce encore nécéssaire => car déplacer dan pythonsource
         - libxml2-dev
         - libpoppler-glib-dev
         - libgconfmm-2.6-dev
@@ -56,17 +78,15 @@ parts:
         - libglibmm-2.4-1v5
         - libpoppler-glib8
         - libpoppler58
-        - python2.7 #Est-ce encore nécéssaire => à déplacer dan pythonsource
-        - libpython2.7 #Est-ce encore nécéssaire => à déplacer dan pythonsource
         - libgtkmm-2.4-1v5
         - libboost-regex1.58.0
         - libsigc++-2.0-0v5
   
-  pythonsource: #A renomer en referencer-plugins par exemple
+  referencer-plugins: #A renomer en referencer-plugins par exemple
     plugin: nil
     stage-packages:
         - python2.7-dev
         - libpython2.7-dev
-        - python-gi-dev #Est-ce nécéssaire ?
+        #- python-gi-dev #Est-ce nécéssaire ?
         - python-gtk2
         - python-gobject-2
