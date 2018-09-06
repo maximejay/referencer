@@ -7,27 +7,11 @@ grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 icon: ./referencer-1.2.2/data/referencer.svg
 
-#plugs:
-#  dbus-actions: # name this whatever you want
-#    interface: dbus
-#    bus: session
-#    name: org.gtk.Actions
-    
-#  dbus-menus: # name this whatever you want
-#    interface: dbus
-#    bus: session
-#    name: org.gtk.Menus
-    
-#  dbus-gconf: # name this whatever you want
-#    interface: dbus
-#    bus: session
-#    name: org.gnome.GConf.Client
     
 apps:
   referencer:
     command: desktop-launch $SNAP/bin/referencer
     desktop: share/applications/referencer.desktop
-#    slots: [ dbus-actions dbus-menus dbus-gconf ]
     environment:
       PYTHONPATH: $SNAP/lib/x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/:$SNAP/usr/lib/python2.7/plat-x86_64-linux-gnu/:$SNAP/usr/lib/python2.7/dist-packages/:$SNAP/usr/lib/python2.7/dist-packages/gi/:$SNAP/usr/lib/python2.7/dist-packages/gi/overrides/:$SNAP/lib/referencer/:$PYTHONPATH
 
@@ -36,16 +20,10 @@ apps:
         - home
         - desktop
         - unity7
-#        - network-control
-#        - mount-observe
-#        - gsettings
+        - gsettings
         - network
         - desktop-legacy
         - wayland
-#        - classic-support
-#        - dbus-actions
-#        - dbus-menus
-#        - dbus-gconf
     
 parts:
   referencer:
@@ -81,12 +59,16 @@ parts:
         - libgtkmm-2.4-1v5
         - libboost-regex1.58.0
         - libsigc++-2.0-0v5
+        - libcanberra-gtk-module
+        - libatk-adaptor
+        - overlay-scrollbar-gtk2
+        - libgail-common
+        - gtk2-engines-pixbuf #Add that to prevent bad theme
   
-  referencer-plugins: #A renomer en referencer-plugins par exemple
+  referencer-plugins: 
     plugin: nil
     stage-packages:
         - python2.7-dev
         - libpython2.7-dev
-        #- python-gi-dev #Est-ce nécéssaire ?
         - python-gtk2
         - python-gobject-2

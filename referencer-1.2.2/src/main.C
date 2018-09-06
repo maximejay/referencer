@@ -47,15 +47,7 @@ int main (int argc, char **argv)
 
 	Gio::init ();
 
-    
- /*   
-    Glib::ustring snappath= "" ;
-    if (getenv("SNAP")){
-        snappath = Glib::ustring(getenv("SNAP")) + Glib::ustring("/share/referencer/") ;
-        DEBUG (String::ucompose ("setting datadir to %1", snappath));
-        setenv(DATADIR,snappath.c_str(),1);
-    }
-*/    
+ 
 
 	Glib::ustring pythonPath = "";
 	/* Pick up existing python path */

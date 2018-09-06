@@ -2519,23 +2519,24 @@ void RefWindow::onOpenDoc ()
 	std::vector<Document*>::iterator const end = docs.end ();
 	for (; it != end ; ++it) {
 		if (!(*it)->getFileName().empty()) {
-			try {
-			    /*old way but good:*/
-				/*Gio::AppInfo::launch_default_for_uri ((*it)->getFileName());*/
-				/*new way but bad => dont also work with snap as snap env does not no installed apps...*/
-				DEBUG (String::ucompose ("we try to open the pdf '%1'",(*it)->getFileName()));
-				int ret;
-				std::string pdf;
-				pdf=String::ucompose("xdg-open "+(*it)->getFileName());
-				ret = system(pdf.c_str());
-				DEBUG (String::ucompose ("retour system '%1'",ret));
-			} catch (Glib::Exception &ex) {
-				Glib::ustring file_display_name = Gio::File::create_for_uri((*it)->getFileName())->query_info()->get_display_name();
-				Utility::exceptionDialog (&ex,
-					String::ucompose (
-						_("Trying to open file '%1'"),
-						file_display_name));
-				return;
+		    if (getenv("SNAP")){
+		        /*DEBUG (String::ucompose ("trying to open the pdf '%1'",(*it)->getFileName()));*/
+			    int ret;
+			    std::string pdf;
+			    pdf=String::ucompose("xdg-open "+(*it)->getFileName());
+			    ret = system(pdf.c_str());
+			    if (ret!=0){
+			        DEBUG (String::ucompose ("we failed to open '%1'",(*it)->getFileName()));
+			        DEBUG (String::ucompose ("Error '%1'",ret));
+			    }
+			}else{
+			    try {
+			        Gio::AppInfo::launch_default_for_uri ((*it)->getFileName());	
+			    } catch (Glib::Exception &ex) {
+				    Glib::ustring file_display_name = Gio::File::create_for_uri((*it)->getFileName())->query_info()->get_display_name();
+				    Utility::exceptionDialog (&ex,String::ucompose(_("Trying to open file '%1'"),file_display_name));
+				    return;
+		        }
 			}
 		}
 	}
